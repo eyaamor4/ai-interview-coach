@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -20,5 +20,42 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build Docker images
+      - name: Build Docker Compose services
         run: docker compose build
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push backend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          push: true
+          tags: |
+            eyaamor/ai-interview-coach-backend:latest
+            eyaamor/ai-interview-coach-backend:${{ github.sha }}
+
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend/frontend
+          push: true
+          tags: |
+            eyaamor/ai-interview-coach-frontend:latest
+            eyaamor/ai-interview-coach-frontend:${{ github.sha }}
