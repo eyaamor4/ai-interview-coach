@@ -1,9 +1,5 @@
 # 🚀 AI Interview Coach
 
-\<p align="center">   \<strong>An AI-powered platform for technical interview preparation and candidate evaluation.\</strong> \</p>
-
-\<p align="center">   \<img src="[https://img.shields.io/badge/Python-3.10+-blue?logo=python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)" />   \<img src="[https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi)" />   \<img src="[https://img.shields.io/badge/React-Frontend-61DAFB?logo=react](https://img.shields.io/badge/React-Frontend-61DAFB?logo=react)" />   \<img src="[https://img.shields.io/badge/Llama%203-LLM-orange](https://img.shields.io/badge/Llama%203-LLM-orange)" />   \<img src="[https://img.shields.io/badge/Docker-Containerization-2496ED?logo=docker](https://img.shields.io/badge/Docker-Containerization-2496ED?logo=docker)" />   \<img src="[https://img.shields.io/badge/PostgreSQL-Database-4169E1?logo=postgresql](https://img.shields.io/badge/PostgreSQL-Database-4169E1?logo=postgresql)" /> \</p>
-
 ## 📌 Overview
 
 **AI Interview Coach** is a full-stack AI-powered application designed to help candidates prepare for technical interviews and enable recruiters to evaluate candidate performance.
